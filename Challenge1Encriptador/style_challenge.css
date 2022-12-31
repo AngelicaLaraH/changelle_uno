@@ -1,0 +1,80 @@
+body{
+    background: url(imageneschallenge/images.jpeg) ;
+}
+
+.div-padre{
+    margin: 50px auto;
+    width: 80%
+}
+.logo-de-alura{
+
+    margin: 50px 0 0 80px;
+}
+
+.parte-izquierda{
+    float:left;
+}
+
+.label-textoEntrada{
+    display: block;
+    font-size: 20px;
+    margin: 0 0 10px;
+}
+
+.botonEncriptar{
+    left: 50px;
+    padding: 15px 25px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 1px 1px 5px 1px rgb(244, 241, 241);
+    background: #9696ea;
+    font-size: 18px;
+    color: aliceblue;
+}
+
+.botonDesencriptar{
+    padding: 15px 10px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 1px 1px 5px 1px rgba(244, 242, 242, 0.57);
+    background: #401142;
+    font-size: 18px;
+    color: rgb(245, 238, 244);
+}
+
+.parte- derecha{
+
+}
+
+.diamante{
+    position: absolute;
+    width: 336px;
+    height: 304px;
+    left: 700px;
+    top: 40px;  
+}
+
+.label-textoSalida{
+    display: block;
+    font-size: 20px;
+    margin: 0 0 10px;
+}
+
+.mensajeEncontrado{
+    position: absolute;
+    width: 336px;
+    height: 324px;
+    left: 700px;
+    top: 384px;
+    font-family: Inter;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 29px;
+    letter-spacing: 0em;
+    text-align: center;
+}
+
+footer {
+    background: url(imageneschallenge/footer.jpeg);
+}
+

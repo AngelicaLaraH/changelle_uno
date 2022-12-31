@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Challenge 1 Encriptador de Liz</title>
+        <link rel="stylesheet" href="style_challenge.css">
+
+    </head>
+    <body>
+       <div class="div-padre">
+        <header>
+            <div> 
+                 <img src="imageneschallenge/Vector.png"alt="Logo de Alura"class="logo-de-alura">
+            </div>
+           
+        </header>
+        <main>
+            <div class="parte-izquierda">
+
+                    <label for="entrada" class="label-textoEntrada">Ingrese un mensaje </label>
+                    <textarea name="" id="entrada" cols="60" rows="10"required placeholder="Ingrese el texto aqui"></textarea>
+                    <p class="advertencia">⚠ Solo letras minisculas y sin  acentos</p>
+                    <button id="botonEncriptar" class="botonEncriptar">encriptar</button>
+                    <button id="botonDesencriptar" class="botonDesencriptar">desencriptar</button>
+
+            </div>
+            
+               
+            <div class="parte-derecha">
+                    <img src="imageneschallenge/Muñeco.png" alt="muneco con diamante" class="diamante">
+                    <p class="mensajeEncontrado">Ningun Mensaje fue encontrado</p>
+
+                    <label for="salida" class="label-textoSalida">Resultado </label>
+                    <textarea name="" id="salida" cols="35" rows="14"></textarea>
+                    <button id="botonCopiar" class=>copiar</button>
+
+            
+            </div>
+           
+            </div>
+
+        </main>
+
+        <footer>
+            <p>Este codificador fue realizado por Angelica Lizbeth Lara Hurtado</p>
+        </footer>
+
+      
+    </body>
+    <script>
+
+        let areaEntrada = document.getElementById("entrada");
+        let areaSalida = document.getElementById("salida");
+        let botonEncriptar = document.getElementById("botonEncriptar");
+        let botonDesencriptar = document.getElementById("botonDesencriptar");
+       
+
+  
+        botonEncriptar.addEventListener("click",encriptar);
+            function encriptar(){
+                let texto = areaEntrada.value; 
+                texto=texto.toLowerCase();
+                let encriptado="";
+
+                for(let i=0;i<texto.length;i++){
+                encriptado+=comparar(texto[i]);
+                }
+
+                areaSalida.value=encriptado;
+            }
+
+            function comparar(letra){
+                let salida;
+                switch(letra){
+                case "a":
+                    salida="ai";
+                    break;
+                case "e":
+                    salida="enter";
+                    break;
+                case "i":
+                    salida="imes";
+                    break;
+                case "o":
+                    salida="ober";
+                    break;
+                case "u":
+                    salida="ufat";
+                    break;
+                default:
+                salida=letra;
+                }
+            return salida;
+            }
+    
+    
+        botonDesencriptar.addEventListener("click",desencriptar);
+        
+        function desencriptar(){
+        
+            let texto=areaEntrada.value.toLowerCase();
+                texto=texto.replaceAll("ai", "a");
+                texto=texto.replaceAll("enter", "e");
+                texto=texto.replaceAll("imes", "i");
+                texto=texto.replaceAll("ober", "o");
+                texto=texto.replaceAll("ufat", "u");
+            salida.value=texto;
+        }
+
+        var buttonCopiar = document.getElementById('botonCopiar');
+        buttonCopiar.onclick = copiar;
+
+        function copiar() {
+            var copiarEntrada = salida.value;
+            navigator.clipboard.writeText(copiarEntrada);
+            alert("Texto copiado.");
+            document.getElementById('salida').value = "";
+            document.getElementById('entrada').value = "";
+            document.getElementById('entrada').focus();
+        }
+</script>
